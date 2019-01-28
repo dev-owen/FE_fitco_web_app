@@ -1,0 +1,26 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+ 
+ 
+<!---- Javascript SDK ---->
+<script type="text/javascript">var CAFE24API = {initializeXhr : function () { try { return new XMLHttpRequest(); } catch (error) { return new window.ActiveXObject('Microsoft.XMLHTTP'); } },fullPath: function (url) { var API_PRIVATE_URL = ["\/products\/([0-9]+)\/cart\/count"]; for(var i in API_PRIVATE_URL){ var regExp = new RegExp('/openapi/v2' + API_PRIVATE_URL[i] + '($|[?]|[/]$)'); if (regExp.test(url) == true) { return 'https://' + window.location.hostname + url; } } return url; },get : function(url, callback) { return CAFE24API.complete('GET', url, null, callback); },post : function(url, data, callback) { return CAFE24API.complete('POST', url, data, callback); },put : function(url, data, callback) { return CAFE24API.complete('PUT', url, data, callback); },delete : function(url, data, callback) { return CAFE24API.complete('DELETE', url, data, callback); },complete : function(method, url, data, callback) { var url = CAFE24API.fullPath(url); var xhr = CAFE24API.initializeXhr(); xhr.open(method, url, true); if (method != 'GET') { xhr.setRequestHeader('Content-type','application/json; charset=utf-8'); } if (typeof data == 'object') { data = JSON.stringify(data); } xhr.send(data || null); xhr.onreadystatechange = function () { if (xhr.readyState === XMLHttpRequest.DONE) { if (xhr.status >= 200 && xhr.status <= 208) { callback(null, JSON.parse(xhr.responseText)); } else { callback(new Error(xhr.status), JSON.parse(xhr.responseText)); } } }; }};</script>
+<!---- Javascript SDK ---->
+<script>
+// 사용할 앱의 App Key를 설정해 주세요.
+if ( typeof CAFE24API.init == 'function' ) {
+    CAFE24API.init('YOUR APP KEY');
+}
+ 
+// GET
+CAFE24API.get('/api/v2/products/10', function(err, res){
+    console.log(res);
+});
+</script> 
+ 
+<title>기본 레이아웃</title>
+<meta name="path_role" content="PRODUCT_DETAIL" />
+</head>
+<body>
+
+</body>
+</html>

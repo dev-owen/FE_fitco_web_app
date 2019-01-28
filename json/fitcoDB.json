@@ -1,0 +1,63 @@
+﻿{
+  "outer" : {
+    "padding" : {
+      "base_path" : "https://jgyuity.cafe24.com/cafe24/svg/outer/padding/padding.svg",
+      "torso" : {
+        "large" : "https://jgyuity.cafe24.com/cafe24/svg/outer/padding/paddingTorso.svg",
+        "small" : "https://jgyuity.cafe24.com/cafe24/svg/outer/padding/paddingTorsoSmall.svg"
+      },
+      "biacromion" : {
+        "large" : "https://jgyuity.cafe24.com/cafe24/svg/outer/padding/paddingShoulder.svg",
+        "small" : "https://jgyuity.cafe24.com/cafe24/svg/outer/padding/paddingShoulderSmall.svg"
+      },
+      "armLength" : {
+        "large" : "https://jgyuity.cafe24.com/cafe24/svg/outer/padding/paddingSleeve.svg",
+        "small" : "https://jgyuity.cafe24.com/cafe24/svg/outer/padding/paddingSleeveSmall.svg"
+      },
+      "chest" : {
+        "large" : "https://jgyuity.cafe24.com/cafe24/svg/outer/padding/paddingChest.svg",
+        "small" : "https://jgyuity.cafe24.com/cafe24/svg/outer/padding/paddingChestSmall.svg"
+      }
+    },
+    "coat": {
+      "base_path" : "",
+      "torso" : {
+        "large" : "",
+        "small" : ""
+      },
+      "biacromion" : {
+        "large" : "",
+        "small" : ""
+      },
+      "armLength" : {
+        "large" : "",
+        "small" : ""
+      },
+      "chest" : {
+        "large" : "",
+        "small" : ""
+      }
+    }
+  },
+  "top" : {
+    "tshirt" : {
+      "base_path" : "https://jgyuity.cafe24.com/cafe24/svg/top/tshirt/tshirt.svg",
+      "torso" : {
+        "large" : "https://jgyuity.cafe24.com/cafe24/svg/top/tshirt/tshirtTorso.svg",
+        "small" : "https://jgyuity.cafe24.com/cafe24/svg/top/tshirt/tshirtTorsoSmall.svg"
+      },
+      "biacromion" : {
+        "large" : "https://jgyuity.cafe24.com/cafe24/svg/top/tshirt/tshirtShoulder.svg",
+        "small" : "https://jgyuity.cafe24.com/cafe24/svg/top/tshirt/tshirtShoulderSmall.svg"
+      },
+      "armLength" : {
+        "large" : "https://jgyuity.cafe24.com/cafe24/svg/top/tshirt/tshirtSleeve.svg",
+        "small" : "https://jgyuity.cafe24.com/cafe24/svg/top/tshirt/tshirtSleeveSmall.svg"
+      },
+      "chest" : {
+        "large" : "https://jgyuity.cafe24.com/cafe24/svg/top/tshirt/tshirtChest.svg",
+        "small" : "https://jgyuity.cafe24.com/cafe24/svg/top/tshirt/tshirtChestSmall.svg"
+      }
+    }
+  }
+}

@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>detail</title>
+</head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://jgyuity.cafe24.com/cafe24/css/detail.css">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<body>
+<div class="container">
+    <h1>간편 입력</h1>
+    <div>
+        <div class="form-group">
+            <label for="chest" class="control-label col-xs-3">가슴</label>
+            <div class="col-xs-9">
+                <input id="chest" type="text" class="form-control" value="" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="biacromion" class="control-label col-xs-3">어깨</label>
+            <div class="col-xs-9">
+                <input id="biacromion" type="text" class="form-control" value="" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="armLength" class="control-label col-xs-3">팔길이</label>
+            <div class="col-xs-9">
+                <input id="armLength" type="text" class="form-control" value="" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="torso" class="control-label col-xs-3">복부둘레</label>
+            <div class="col-xs-9">
+                <input id="torso" type="text" class="form-control" value="" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-xs-12">
+                <button type="submit" onclick="saveData()" id="submit" class="btn btn-primary">제출</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var moveOn = true;
+    var saveData = function () {
+        moveOn = true;
+        var chest = parseFloat($("#chest").val());
+        if(chest <= 150 && chest >= 60) {
+            localStorage.setItem('chest', $("#chest").val());
+        } else {
+            alert('가슴둘레는 60~150 범위의 숫자로 입력해주세요.');
+            moveOn = false;
+            return;
+        }
+        var bia = parseFloat($("#biacromion").val());
+        if(bia <= 100 && bia >= 20) {
+            localStorage.setItem('biacromion', $("#biacromion").val());
+        } else {
+            alert('어깨너비는 20~100 범위의 숫자로 입력해주세요.');
+            moveOn = false;
+            return;
+        }
+        var arm = parseFloat($("#armLength").val());
+        if(arm <= 100 && arm >= 20) {
+            localStorage.setItem('armLength', $("#armLength").val());
+        } else {
+            alert('팔길이는 20~100 범위의 숫자로 입력해주세요.');
+            moveOn = false;
+            return;
+        }
+        var torso = parseFloat($("#torso").val());
+        if(torso <= 150 && torso >= 40) {
+            localStorage.setItem('torso', $("#torso").val());
+        } else {
+            alert('복부둘레는 40~150 범위의 숫자로 입력해주세요.');
+            moveOn = false;
+            return;
+        }
+        window.location.href = 'https://jgyuity.cafe24.com/cafe24/html/test.html';
+    }
+</script>
+</body>
+</html>

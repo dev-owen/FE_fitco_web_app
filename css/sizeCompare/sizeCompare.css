@@ -1,0 +1,104 @@
+﻿body {
+    text-align: center;
+    padding-top: 19px;
+}
+
+p {
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    color: #231f20;
+    font-size: 26px;
+    letter-spacing: 0.5px;
+    margin-bottom: 0;
+}
+
+p.text_small {
+    font-size: 12px;
+    letter-spacing: 0.3px;
+}
+
+#svg_clothes {
+    margin: 50px auto;
+    width: 346px;
+    height: 346px;
+}
+
+#size_name {
+    margin: auto;
+    font-size: 36px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.2;
+    letter-spacing: normal;
+    color: #26a9e0;
+    position: relative;
+    top: -200px;
+}
+
+th, td {
+    text-align: center;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.2;
+    letter-spacing: normal;
+    text-align: center;
+    color: #211f1f;
+}
+
+.table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td {
+    vertical-align: middle;
+}
+
+tr {
+    height: 50px;
+}
+.glyphicon-ok-circle {
+    font-size: 30px;
+    border: 0px;
+}
+
+.glyphicon-ok-circle:before {
+    font-weight: 100;
+}
+
+tbody tr.selected_size td {
+    background-color: rgba(38, 165, 222, 0.1);
+    color: #26a9e0;
+}
+
+tfoot tr.my_clothes td {
+    font-size: 14px;
+    color: #f6921e;
+    text-align: center;
+}
+
+input[type="text"] {
+    color: #f6921e;
+    width: 40px;
+    height: 20px;
+    text-align: center;
+    border-color: #f6921e;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+}
+
+/*input[type="text"]:focus {*/
+    /*box-shadow: 0 0 4px #f6921e;*/
+/*}*/
+
+.btn.btn-default.confirm {
+    padding: 3px 5px;
+    font-size: 12px;
+    border-radius: 7px;
+}
+
+tfoot tr.error_value td {
+    font-size: 14px;
+    background-color: #f4f5f6;
+    color: #ec1c24;
+}

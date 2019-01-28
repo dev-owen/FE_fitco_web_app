@@ -1,0 +1,19 @@
+﻿{
+  "type" : "outer",
+  "subtype" : "padding",
+  "base_path" : "https://jgyuity.cafe24.com/cafe24/svg/padding/padding.svg",
+  "path": {
+    "large" : {
+      "torso" : "https://jgyuity.cafe24.com/cafe24/svg/padding/paddingTorso.svg",
+      "shoulder" : "https://jgyuity.cafe24.com/cafe24/svg/padding/paddingShoulder.svg",
+      "sleeve" : "https://jgyuity.cafe24.com/cafe24/svg/padding/paddingSleeve.svg",
+      "chest" : "https://jgyuity.cafe24.com/cafe24/svg/padding/paddingChest.svg"
+    },
+    "small" : {
+      "torso" : "https://jgyuity.cafe24.com/cafe24/svg/padding/paddingTorsoSmall.svg",
+      "shoulder" : "https://jgyuity.cafe24.com/cafe24/svg/paddingShoulderSmall.svg",
+      "sleeve" : "https://jgyuity.cafe24.com/cafe24/svg/padding/paddingSleeveSmall.svg",
+      "chest" : "https://jgyuity.cafe24.com/cafe24/svg/padding/paddingChestSmall.svg"
+    }
+  }
+}

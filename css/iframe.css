@@ -1,0 +1,259 @@
+﻿body {
+    text-align: center;
+}
+.container {
+    padding: 0;
+    margin : 0;
+    width: 100%;
+}
+
+.header {
+    width: 100%;
+    height: 60px;
+    background-color: #f1f1f2;
+}
+
+.FITCO img {
+    margin-top: 15px;
+    margin-left: 10px;
+    width: 100px;
+    height: 30px;
+    font-family: AppleSDGothicNeoUL00;
+    color: #27aae1;
+    font-size: 19.8px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 60px;
+    letter-spacing: 2px;
+    float: left;
+}
+
+#close_iframe {
+    margin-top: -5px;
+    margin-left: 50px;
+    color: #424343;
+    font-size: 40px;
+    width: 60px;
+    height: 60px;
+    background-color: #f1f1f2;
+    font-weight: 100;
+    float: right;
+    box-shadow: none;
+    border: none;
+}
+
+.clothes_name {
+    width: 234px;
+    height: 29px;
+    line-height: 60px;
+    font-family: AppleSDGothicNeoB00;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: 0.6px;
+    color: #26a9e0;
+}
+
+@media screen and (max-width: 479px) {
+    .clothes_name {
+        font-size: 16px;
+    }
+}
+
+@media screen and (min-width: 480px) {
+    .clothes_name {
+        font-size: 24px;
+    }
+}
+
+.scoring {
+    margin-top: 30px;
+    text-align: center;
+
+}
+
+.btn-outline {
+    background-color: transparent;
+    border-radius: 8px;
+    border: 1px solid #f6921e;
+    color: #f6921e;
+}
+
+.btn-outline-size {
+    background-color: transparent;
+    border-radius: 5px;
+    border: 1px solid #d0d1d2;
+    color: #d0d1d2;
+    margin: 0 5px;
+}
+
+.btn-outline-size:hover {
+    border-color: #26a7df;
+    color: #26a7df;
+}
+
+.btn-outline-size:focus {
+    border: 1px solid #26a7df;
+    color: #26a7df;
+    font-weight: 500;
+    font-color: #26a7df;
+}
+
+.selected {
+    border: 1px solid #26a7df;
+    color: #26a7df;
+    font-weight: 500;
+    font-color: #26a7df;
+}
+
+.point {
+    font-family: AppleSDGothicNeoUL00;
+    color: #000000;
+    font-weight: 600;
+}
+
+.point .clothes_name {
+    font-size: 14.7px;
+}
+
+#score_bar {
+    width: 200px;
+    border-top: 3px solid #26a7df;
+    margin: 10px auto;
+}
+
+#circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: white;
+    border: 2px solid #26a7df;
+    position: relative;
+    top: -10px;
+    left: 150px;
+}
+
+#rec_score {
+    width: 50px;
+    text-align: left;
+    position: relative;
+    top: -5px;
+    left: 135px;
+    font-family: AppleSDGothicNeoB00;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.2;
+    letter-spacing: normal;
+    text-align: center;
+    color: #26a7df;
+}
+
+#clothes_svg_image {
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 480px) {
+    #clothes_svg_image {
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 480px) {
+    #clothes_svg_image {
+        width: 240px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    #clothes_svg_image {
+        width: 280px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    #clothes_svg_image {
+        width: 320px;
+    }
+}
+
+/*Styling Selectbox*/
+.dropdown {
+    width: 120px;
+    display: inline-block;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 3px #f6921e;
+    transition: all .5s ease;
+    position: relative;
+    font-size: 14px;
+    color: #f6921e;
+    height: 100%;
+    text-align: left
+}
+.dropdown .select {
+    cursor: pointer;
+    display: block;
+    padding: 3px 10px;
+}
+.dropdown .select > i {
+    font-size: 13px;
+    color: #f6921e;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    float: right;
+    line-height: 20px
+}
+.dropdown:hover {
+    box-shadow: 0 0 4px #f6921e;
+}
+.dropdown:active {
+    background-color: #f8f8f8
+}
+.dropdown.active:hover,
+.dropdown.active {
+    box-shadow: 0 0 4px #f6921e;
+    border-radius: 5px 5px 0 0;
+    background-color: #f8f8f8
+}
+.dropdown.active .select > i {
+    transform: rotate(-90deg)
+}
+.dropdown .dropdown-menu {
+    position: absolute;
+    background-color: #fff;
+    width: 120px;
+    left: 0;
+    margin-top: 1px;
+    box-shadow: 0 1px 2px #f6921e;
+    border-radius: 0 1px 5px 5px;
+    overflow: hidden;
+    display: none;
+    max-height: 144px;
+    overflow-y: auto;
+    z-index: 9
+}
+.dropdown .dropdown-menu li {
+    padding: 3px 10px;
+    transition: all .2s ease-in-out;
+    cursor: pointer
+}
+.dropdown .dropdown-menu {
+    padding: 0;
+    list-style: none
+}
+.dropdown .dropdown-menu li:hover {
+    background-color: #f2f2f2
+}
+.dropdown .dropdown-menu li:active {
+    background-color: #e2e2e2
+}
+.dropdown-menu {
+    min-width: 120px;
+}
+
+.invisible {
+    visibility: hidden;
+}
