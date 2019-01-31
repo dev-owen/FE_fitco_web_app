@@ -19,14 +19,14 @@ p.text_small {
 }
 
 #svg_clothes {
-    margin: 50px auto;
-    width: 346px;
-    height: 346px;
+    margin: 0 auto;
+    width: 600px;
+    height: 600px;
 }
 
 #size_name {
     margin: auto;
-    font-size: 36px;
+    font-size: 48px;
     font-weight: normal;
     font-style: normal;
     font-stretch: normal;
@@ -34,8 +34,13 @@ p.text_small {
     letter-spacing: normal;
     color: #26a9e0;
     position: relative;
-    top: -200px;
+    top: -350px;
 }
+
+.table-borderless > tbody > tr > td {
+    border: none;
+}
+
 
 th, td {
     text-align: center;
@@ -66,20 +71,21 @@ tr {
 }
 
 tbody tr.selected_size td {
-    background-color: rgba(38, 165, 222, 0.1);
+    background-color: rgba(38, 165, 222, 0.07);
     color: #26a9e0;
 }
 
 tfoot tr.my_clothes td {
     font-size: 14px;
-    color: #f6921e;
     text-align: center;
+    border-top: 2px solid lightgray;
+    background-color: rgba(246, 146, 30, 0.1);
 }
 
 input[type="text"] {
     color: #f6921e;
     width: 40px;
-    height: 20px;
+    height: 30px;
     text-align: center;
     border-color: #f6921e;
     border-style: solid;
@@ -95,10 +101,12 @@ input[type="text"] {
     padding: 3px 5px;
     font-size: 12px;
     border-radius: 7px;
+    background-color: rgba(246, 146, 30, 0.3);
 }
 
 tfoot tr.error_value td {
     font-size: 14px;
     background-color: #f4f5f6;
     color: #ec1c24;
+    font-weight: bold;
 }
