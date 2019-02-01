@@ -1,5 +1,8 @@
-﻿iframe.size_compare_iframe {
+﻿
+iframe.size_compare_iframe {
     border-width: 0;
+    overflow: hidden;
+    height: 1050px;
 }
 
 #myIframe {

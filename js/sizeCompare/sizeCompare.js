@@ -19,6 +19,13 @@
         "chest": "",
         "armLength": "",
         "torso": ""
+    },
+    // 사이즈가 큰지 작은지 string 값
+    "size_tf" : {
+        "biacromion": "",
+        "chest": "",
+        "armLength": "",
+        "torso": ""
     }
 }
 
@@ -276,9 +283,14 @@ $(document).ready(function () {
             size.target_size[part] = $(this).find("td")[i].innerText;
             i++;
         }
+        if(Number(size.target_size.biacromion)-Number($("#biacromion_size").val()) >= 0) { size.size_tf.biacromion = "큼"} else { size.size_tf.biacromion = "작음"}
+        if(Number(size.target_size.chest)-Number($("#chest_size").val()) >= 0) { size.size_tf.chest = "큼"} else { size.size_tf.chest = "작음" }
+        if(Number(size.target_size.armLength)-Number($("#armLength_size").val()) >= 0) { size.size_tf.armLength = "큼"} else { size.size_tf.armLength = "작음"}
+        if(Number(size.target_size.torso)-Number($("#torso_size").val()) >= 0) { size.size_tf.torso = "큼"} else { size.size_tf.torso = "작음"}
+
         for(var part in size.base_size) {
             if(size.input_size[part] != 0) {
-                $("tfoot > tr.error_value > td:nth-child(" + j + ")").text((Number(size.target_size[part])-Number(size.input_size[part])).toFixed(1));
+                $("tfoot > tr.error_value > td:nth-child(" + j + ")").text(Math.abs((Number(size.target_size[part])-Number(size.input_size[part])).toFixed(1))+"cm "+size.size_tf[part]);
             }
             var wf = (Number(size.target_size[part])-Number(size.base_size[part]))/Number(size.base_size[part]);
             wf *= 25.0;
@@ -288,16 +300,16 @@ $(document).ready(function () {
         calculateInputImage('prd');
 
         if(size.input_size.biacromion != 0) {
-            document.getElementById("biacromion_text").innerHTML = '어깨너비 '+(Number(size.target_size.biacromion)-Number(size.input_size.biacromion)).toFixed(1)+"cm";
+            document.getElementById("biacromion_text").innerHTML = '어깨너비 '+Math.abs((Number(size.target_size.biacromion)-Number(size.input_size.biacromion)).toFixed(1))+"cm "+size.size_tf.biacromion;
         }
         if(size.input_size.chest != 0) {
-            document.getElementById("chest_text").innerHTML = '가슴단면 '+(Number(size.target_size.chest)-Number(size.input_size.chest)).toFixed(1)+"cm";
+            document.getElementById("chest_text").innerHTML = '가슴단면 '+Math.abs((Number(size.target_size.chest)-Number(size.input_size.chest)).toFixed(1))+"cm "+size.size_tf.chest;
         }
         if(size.input_size.armLength != 0) {
-            document.getElementById("armLength_text").innerHTML = '소매길이 '+(Number(size.target_size.armLength)-Number(size.input_size.armLength)).toFixed(1)+"cm";
+            document.getElementById("armLength_text").innerHTML = '소매길이 '+Math.abs((Number(size.target_size.armLength)-Number(size.input_size.armLength)).toFixed(1))+"cm "+size.size_tf.armLength;
         }
         if(size.input_size.torso != 0) {
-            document.getElementById("torso_text").innerHTML = '총장 '+(Number(size.target_size.torso)-Number(size.input_size.torso)).toFixed(1)+"cm";
+            document.getElementById("torso_text").innerHTML = '총장 '+Math.abs((Number(size.target_size.torso)-Number(size.input_size.torso)).toFixed(1))+"cm "+size.size_tf.torso;
         }
     });
 });
@@ -305,47 +317,71 @@ $(document).ready(function () {
 
 var sizeConfirm = function () {
     document.getElementById("input_clothes").innerHTML = "";
-
     var biacromion_input = Number(Number($("#biacromion_size").val()).toFixed(1));
+    if(Number(size.target_size.biacromion)-biacromion_input >= 0) { size.size_tf.biacromion = "큼"} else { size.size_tf.biacromion = "작음"}
     var chest_input = Number(Number($("#chest_size").val()).toFixed(1));
+    if(Number(size.target_size.chest)-chest_input >= 0) { size.size_tf.chest = "큼"} else { size.size_tf.chest = "작음" }
     var armLength_input = Number(Number($("#armLength_size").val()).toFixed(1));
+    if(Number(size.target_size.armLength)-armLength_input >= 0) { size.size_tf.armLength = "큼"} else { size.size_tf.armLength = "작음"}
     var torso_input = Number(Number($("#torso_size").val()).toFixed(1));
+    if(Number(size.target_size.torso)-torso_input >= 0) { size.size_tf.torso = "큼"} else { size.size_tf.torso = "작음"}
     if(isNaN(biacromion_input)||isNaN(chest_input)||isNaN(armLength_input)||isNaN(torso_input)) {
         alert("숫자를 입력해 주세요.");
         return;
     }
     if((biacromion_input < 30 && biacromion_input !== 0) || biacromion_input > 60 || (chest_input < 40 && chest_input !== 0) || chest_input > 70 || (armLength_input < 50 && armLength_input !== 0) || armLength_input > 80 || (torso_input < 60 && torso_input !== 0) || torso_input > 90) {
         alert("정확한 값을 입력해 주세요.\n어깨너비 : 30cm ~ 60cm\n가슴단면 : 40cm ~ 70cm\n소매길이 : 50cm ~ 80cm\n총장 : 60cm ~ 90cm");
+        for(var i = 0; i < $(".cls-11").length; i++) {
+            $(".cls-11")[i].innerHTML = "";
+        }
         return;
     }
 
     size.input_size.biacromion = biacromion_input;
     if(biacromion_input !== 0) {
-        document.getElementById("biacromion_text").innerHTML = "어깨너비\n"+(Number(size.target_size.biacromion)-biacromion_input).toFixed(1)+"cm";
+        $("#biacromion_text").text("어깨너비\n"+Math.abs((Number(size.target_size.biacromion)-biacromion_input).toFixed(1))+"cm "+size.size_tf.biacromion);
+    } else {
+        $("tr.error_value td:nth-child(3)")[0].innerHTML = "-";
+        $("#biacromion_text").text("");
     }
     size.input_size.chest = chest_input;
     if(chest_input !== 0) {
-        $("#chest_text").text("가슴단면\n"+(Number(size.target_size.chest)-chest_input).toFixed(1)+"cm")
+        $("#chest_text").text("가슴단면\n"+Math.abs((Number(size.target_size.chest)-chest_input).toFixed(1))+"cm "+size.size_tf.chest);
+    } else {
+        $("tr.error_value td:nth-child(4)")[0].innerHTML = "-";
+        $("#chest_text").text("");
     }
     size.input_size.armLength = armLength_input;
     if(armLength_input !== 0) {
-        document.getElementById("armLength_text").innerHTML = "소매길이\n"+(Number(size.target_size.armLength)-armLength_input).toFixed(1)+"cm";
+        $("#armLength_text").text("소매길이\n"+Math.abs((Number(size.target_size.armLength)-armLength_input).toFixed(1))+"cm "+size.size_tf.armLength);
+    } else {
+        $("tr.error_value td:nth-child(5)")[0].innerHTML = "-";
+        $("#armLength_text").text("");
     }
     size.input_size.torso = torso_input;
     if(torso_input !== 0) {
-        $("#torso_text").text("총장\n"+(Number(size.target_size.torso)-torso_input).toFixed(1)+"cm");
+        $("#torso_text").text("총장\n"+Math.abs((Number(size.target_size.torso)-torso_input).toFixed(1))+"cm "+size.size_tf.torso);
+    } else {
+        $("tr.error_value td:nth-child(6)")[0].innerHTML = "-";
+        $("#torso_text").text("");
     }
 
     var i = 3;
     for(var part in size.base_size) {
         if(size.input_size[part] != 0) {
-            $("tfoot > tr.error_value > td:nth-child(" + i + ")").text((Number(size.target_size[part])-Number(size.input_size[part])).toFixed(1));
+            $("tfoot > tr.error_value > td:nth-child(" + i + ")").text(Math.abs((Number(size.target_size[part])-Number(size.input_size[part])).toFixed(1))+"cm "+size.size_tf[part]);
             var wf = (Number(size.input_size[part])-Number(size.base_size[part]))/Number(size.base_size[part]);
             wf *= 25.0;
             changeSVGimage(part, wf, 'input');
         }
         i++;
     }
+
+    if(biacromion_input === 0 || chest_input === 0 || armLength_input === 0 || torso_input === 0) {
+        document.getElementById("input_clothes").innerHTML = "";
+        return;
+    }
+
     calculateInputImage('input');
     for(var i = 0; i < document.getElementsByClassName("cls-11").length; i++) {
         document.getElementsByClassName("cls-11")[i].style.visibility = "visible";

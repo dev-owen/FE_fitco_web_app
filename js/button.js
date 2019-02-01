@@ -13,7 +13,7 @@ var fitco = function () {
     //$(".size_guide_info").before("<button id='myBtn'>사이즈 비교</button>&nbsp;&nbsp;"); // 모달 버튼
     //$(".size_guide_info").before("<button id='iframe'>사이즈 비교</button>"); // 아이프레임 버튼
     $("#product_option_id1").parent().after("<button id='iframe'>사이즈 비교</button>"); // 아이프레임 버튼
-    $("#prdDetail > div > p").after("<div id='myFrame'><iframe class='size_compare_iframe' src='https://jgyuity.cafe24.com/cafe24/html/sizeCompare.html' width='100%' height='900px'></iframe></div>");
+    $("#prdDetail > div > p").after("<div id='myFrame'><iframe class='size_compare_iframe' src='https://jgyuity.cafe24.com/cafe24/html/sizeCompare.html' width='100%' height='1050px'></iframe></div>");
 };
 
 if (document.readyState == 'complete') {

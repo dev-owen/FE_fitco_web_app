@@ -12,8 +12,10 @@
 <script src="https://jgyuity.cafe24.com/cafe24/js/sizeCompare.js"></script>
 <body>
 <div class="container">
-    <p>SIZE INFO</p>
-    <p class="text_small">(단위:cm)</p>
+    <div>
+        <p>SIZE INFO</p>
+        <p class="text_small">(단위:cm)</p>
+    </div>
     <div id="svg_clothes">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 840">
             <defs>
@@ -41,29 +43,29 @@
                       d="M578,220a5,5,0,1,1-5-5A5,5,0,0,1,578,220ZM551,335a5,5,0,1,1-5-5A5,5,0,0,1,551,335ZM806,522a5,5,0,1,1-5-5A5,5,0,0,1,806,522ZM300,335a5,5,0,1,1-5-5A5,5,0,0,1,300,335ZM272,220a5,5,0,1,1-5-5A5,5,0,0,1,272,220Zm153-36a5,5,0,1,1-5-5A5,5,0,0,1,425,184Zm199,39a5,5,0,1,1-5-5A5,5,0,0,1,624,223ZM425,659a5,5,0,1,1-5-5A5,5,0,0,1,425,659Z"/>
             </g>
             <g>
-                <text id="biacromion_text" transform="matrix(1 0 0 1 20 230.1162)" class="cls-11" fill="#231F20" style="visibility:hidden;">어깨너비</text>
+                <text id="biacromion_text" transform="matrix(1 0 0 1 20 229)" class="cls-11" fill="#231F20" style="visibility:hidden;">어깨너비</text>
             </g>
             <g>
                 <text id="chest_text" transform="matrix(1 0 0 1 37 345)" class="cls-11" fill="#231F20" style="visibility:hidden;">가슴단면</text>
             </g>
             <g>
-                <text id="torso_text" transform="matrix(1 0 0 1 328 710.3154)" class="cls-11" fill="#231F20" style="visibility:hidden;">총장</text>
+                <text id="torso_text" transform="matrix(1 0 0 1 345 710.3154)" class="cls-11" fill="#231F20" style="visibility:hidden;">총장</text>
             </g>
             <g>
                 <text id="armLength_text" transform="matrix(1 0 0 1 539.6055 180.958)" class="cls-11" fill="#231F20" style="visibility:hidden;">소매길이</text>
             </g>
         </svg>
     </div>
-    <div>
+    <div id="size_table">
         <table class="table table-borderless">
             <thead>
                 <tr style="height: 30px; background-color: #f4f5f6">
-                    <th style="width: 20%;"></th>
-                    <th style="width: 16%;">사이즈</th>
-                    <th style="width: 16%;">어깨너비</th>
-                    <th style="width: 16%;">가슴단면</th>
-                    <th style="width: 16%;">소매길이</th>
-                    <th style="width: 16%;">총장</th>
+                    <th id="ok_circle"></th>
+                    <th class="clothes_size_name">사이즈</th>
+                    <th class="clothes_size_name">어깨너비</th>
+                    <th class="clothes_size_name">가슴단면</th>
+                    <th class="clothes_size_name">소매길이</th>
+                    <th class="clothes_size_name">총장</th>
                 </tr>
             </thead>
             <tbody class="size_list">
